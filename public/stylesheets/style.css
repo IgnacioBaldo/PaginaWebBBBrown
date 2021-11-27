@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.hero{
+  background: url(../images/logo\ solo.jpg);
+  background-size: cover;
+  height: 50vh;
+  min-height: 600px;
+  color: white;
+}
+
+.lista-novedades{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-novedades li{
+  margin: 4px 0;
+}
+
+.lista-novedades li a {
+  background-color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  transition: all .2s ease-in-out;
+  display: block;
+}
+
+.lista-novedades li a:hover {
+  color: #212529;
+  background: #dadada;
+}
+.lista-novedades li a:hover img{
+  filter: none;
+  opacity: 1;
+
+}

@@ -1,0 +1,64 @@
+<div class="conteiner" style="margin-top: 100px;">
+
+
+    {{!primera columna}}
+
+    <div class="row">
+        <div class="col">
+            <p class="text-right">
+                <spam> Hola {{usuario}}! </spam>
+                <a href="/admin/login/logout" class="btn
+                btn-danger"> Cerrar Sesion <i class="fasfa-sing-out-alt"></i></a>
+            </p>
+        </div>
+    </div>
+    {{!FIN primera columna}}
+
+
+
+    {{!Segunda columna}}
+
+    <div class="row">
+        <div class="col-7" style="margin-top: -9px;" <h2>Listado</h2>
+        </div>
+        <div class="col-5 text-right">
+            <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
+
+        </div>
+
+        {{!FIN Segunda columna}}
+
+
+
+        {{!Terceracolumna}}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each novedades}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{titulo}}</td>
+                    <td class="text-center">
+                        <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary">
+                            <i class="fa fa-pencil"></i></a>
+                        <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary">
+                            <i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+        {{!FIN Terceracolumna}}
+
+
+
+    </div>
