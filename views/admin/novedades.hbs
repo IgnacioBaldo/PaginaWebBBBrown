@@ -4,8 +4,8 @@
     {{!primera columna}}
 
     <div class="row">
-        <div class="col-5">
-            <p class="col-7 text-right">
+        <div class="col">
+            <p class="text-end">
                 <spam> Hola {{usuario}}! </spam>
                 <a href="/admin/login/logout" class="btn
                 btn-danger"> Cerrar Sesion <i class="fasfa-sing-out-alt"></i></a>
@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-7" style="margin-top: -9px;" <h2>Listado</h2>
         </div>
-        <div class="col-5 text-right">
+        <div class="text-end">
             <a href="/admin/novedades/agregar" class="btn btn-success"><i class="fas fa-plus"></i> Nuevo</a>
 
         </div>
@@ -37,7 +37,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titulo</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col" class="text-end">Acciones</th>
 
                 </tr>
             </thead>
@@ -46,11 +46,11 @@
                 <tr>
                     <th scope="row">{{id}}</th>
                     <td>{{titulo}}</td>
-                    <td class="text-center">
-                        <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-sm btn-secondary">
-                            <i class="fa fa-pencil"></i></a>
-                        <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary">
-                            <i class="fa fa-trash"></i></a>
+                    <td class="text-end">
+                        <a href="/admin/novedades/modificar/{{id}}" title="Editar" class="btn btn-secondary">
+                            <i class="fas fa-pencil-alt"></i></a>
+                        <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar" class="btn btn-secondary">
+                            <i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
 

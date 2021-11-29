@@ -43,3 +43,12 @@ a {
   opacity: 1;
 
 }
+.visitconect  {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+

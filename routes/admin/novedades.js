@@ -95,9 +95,9 @@ router.post('/modificar', async(req, res, next)=> {
             borrar_img_vieja = true;
 
         }else {
-            if(req.files && Object.keys(req.file).length > 0){
+            if(req.files && Object.keys(req.files).length > 0){
                 imagen = req.files.imagen;
-                img_id = (await uploader (imagen.tempFilePath)).public_id;
+                img_id = (await uploader(imagen.tempFilePath)).public_id;
                 borrar_img_vieja = true;
             }
         }

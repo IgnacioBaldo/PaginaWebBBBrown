@@ -71,19 +71,33 @@
         <h2>Novedades</h2>
         <ul class="lista-novedades">
             {{#each novedades}}
-            <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal{{id}}"><img src="{{imagen}}" width="120
+            <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img src="{{imagen}}" width="60
                 "> {{titulo}}</a></li>
             {{/each}}
         </ul>
     </div>
+
+
+    {{#each novedades}}
+    <!--    Modal -->
+
+    <div class="modal fade" id="modal {{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleBackdropLabel">{{titulo}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <span aria-hidden="true">$times;</span>
+                </div>
+                <div class="modal-body">
+                    <h2>{{subtitulo}}</h2>
+                    <p>{{cuerpo}}</p>
+                </div>
+            </div>
+        </div>  
+    </div> 
+    {{/each}}
 </div>
-
-
-<!--    Modal -->
-
-
-
-
 
 
 <!--Visitanos -->
@@ -91,6 +105,7 @@
 
 
 <div class="visitconect">
+
 
     <div id="conocenos" class="row py-4">
         <div class=" offset-md-3">
@@ -109,34 +124,35 @@
 
     <!-- Contactanos -->
 
+    <div class="conectanos">
+        <div class="col-md-4 mt-4 mt-sm-0 ">
+            <h2>Contactanos</h2>
+            <form action="/" method="post">
+                <div class="form-row">
+                    <div class="from-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                    </div>
+                    <div class="from-group col-md-6">
+                        <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                    </div>
+                    <div class="from-group">
+                        <input type="text" class="form-control" placeholder="Email" name="email">
+                    </div>
 
-    <div class="col-md-4 mt-4 mt-sm-0 ">
-        <h2>Contactanos</h2>
-        <form action="/" method="post">
-            <div class="form-row">
-                <div class="from-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Nombre" name="nombre">
-                </div>
-                <div class="from-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Apellido" name="apellido">
-                </div>
-                <div class="from-group">
-                    <input type="text" class="form-control" placeholder="Email" name="email">
+                    <div class="from-group">
+                        <input type="text" class="form-control" placeholder="Tel" name="telefono">
+                    </div>
+                    <div class="from-group">
+                        <textarea class="from-control" id="Mensaje" rows="4" name="mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+
                 </div>
 
-                <div class="from-group">
-                    <input type="text" class="form-control" placeholder="Tel" name="telefono">
-                </div>
-                <div class="from-group">
-                    <textarea class="from-control" id="Mensaje" rows="4" name="mensaje"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <p>{{message}}</p>
 
-            </div>
-
-        </form>
-        <p>{{message}}</p>
-
+        </div>
     </div>
 
 </div>
