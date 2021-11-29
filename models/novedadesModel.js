@@ -25,15 +25,15 @@ async function insertNovedades(obj){
     
     }
 }
-async function gentNovedadesById(id){
-    var query= "select * from novedades where id =?";
+async function gentNovedadById(id){
+    var query= "select * from novedades where id = ?";
     var rows = await pool.query(query, [id]);
     return rows[0];
 }
 
-async function modificarNovedadesById(obj, id){
+async function modificarNovedadById(obj, id){
     try {
-        var query= "update novedades set ? wehere id=?";
+        var query= "update novedades set ? where id= ?";
         var rows= await pool.query(query, [obj, id]);
         return rows;
 
@@ -42,4 +42,4 @@ async function modificarNovedadesById(obj, id){
     }
 }
 
-module.exports = {getNovedades, deleteNovedadesById, insertNovedades, modificarNovedadesById, gentNovedadesById}
+module.exports = {getNovedades, deleteNovedadesById, insertNovedades, modificarNovedadById, gentNovedadById}

@@ -4,6 +4,7 @@ var novedadesModel = require('./../../models/novedadesModel');
 var util = require('util');
 var cloudinary= require('cloudinary').v2;
 const uploader= util.promisify(cloudinary.uploader.upload);
+const destroy = util.promisify(cloudinary.uploader.destroy);
 
 
 /* GET home page. */
@@ -53,7 +54,7 @@ router.post('/agregar', async(req, res, next)=> {
                 ...req.body, 
                 img_id
             });
-            res.redirect('admin/novedades')
+            res.redirect('/admin/novedades')
         } else {
             res.render ('admin/agregar',{
                 layout: 'admin/layout',
@@ -76,7 +77,7 @@ router.post('/agregar', async(req, res, next)=> {
 
 router.get('/modificar/:id', async ( req, res, next) => {
     let id = req.params.id;
-    let novedades = await novedadesModel.gentNovedadesById(id);
+    let novedades = await novedadesModel.gentNovedadById(id);
     res.render('admin/modificar', {
       layout: 'admin/layout',
       novedades  
@@ -86,19 +87,38 @@ router.get('/modificar/:id', async ( req, res, next) => {
 
 router.post('/modificar', async(req, res, next)=> {
     try {
+        let img_id = req.body.img_original;
+        let borrar_img_vieja = false;
+
+        if(req.body.img_delete == "1") {
+            img_id = null;
+            borrar_img_vieja = true;
+
+        }else {
+            if(req.file && Object.keys(req.file).length > 0){
+                imagen = req.file.imagen;
+                img_id = (await uploder (imagen.tempFilePath)).public_id;
+                borrar_img_vieja = true;
+            }
+        }
+        if( borrar_img_vieja && req.body.img_original) {
+            await (destroy(req.body.img_original));
+        }
+
+
        let obj= {
            titulo: req.body.titulo,
            subtitulo: req.body.subtitulo,
-           cuerpo: req.body.cuerpo
+           cuerpo: req.body.cuerpo, img_id,
        }
-       await novedadesModel.modificarNovedadesById(obj, req.body.id);
+       await novedadesModel.modificarNovedadById(obj, req.body.id);
        res.redirect('/admin/novedades');
 
     }catch (error){
         console.log(error)
         res.render('admin/modificar', {
             layout: 'admin/layout',
-            error: true, message: 'NO se modifico la novedad'
+            error: true, message: 'No se modifico la novedad'
         });
     }
 });
