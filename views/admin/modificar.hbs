@@ -3,16 +3,16 @@
         <div class="col-6 offset-3">
             <h4>Modificar novedad</h4>
             <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="{{novedad.id}}" name="id">
+                <input type="hidden" value="{{novedades.id}}" name="id">
 
                 <div class="from-group">
-                    <input type="text" class="form-control" placeholder="titulo" value="{{novedad.titulo}}" name="titulo">
+                    <input type="text" class="form-control" placeholder="titulo" value="{{novedades.titulo}}" name="titulo">
                 </div>
 
                 <div class="from-group">
-                    <textarea type="text" class="form-control" placeholder="subtitulo" name="subtitulo">{{novedad.subtitulo}}</textarea>
+                    <textarea type="text" class="form-control" placeholder="subtitulo" name="subtitulo">{{novedades.subtitulo}}</textarea>
                 <div class="from-group">
-                    <textarea type="text" class="form-control" placeholder="cuerpo" name="cuerpo">{{novedad.cuerpo}}</textarea>
+                    <textarea type="text" class="form-control" placeholder="cuerpo" name="cuerpo">{{novedades.cuerpo}}</textarea>
                 </div>
                  <div class="fronm-group">
                      <p>
