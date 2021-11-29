@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 27-11-2021 a las 04:38:44
+-- Tiempo de generación: 29-11-2021 a las 23:40:44
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -35,16 +35,15 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   `cuerpo` text NOT NULL,
   `img_id` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `novedades`
 --
 
 INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `cuerpo`, `img_id`) VALUES
-(1, ' Philips Avent Mamadera Natural', 'Fácil de combinar con la lactancia materna natural', 'La tetina ancha con forma de pecho permite un ajuste natural, parecido al del pecho, lo que le permite al bebé combinar la lactancia materna y la alimentación con mamadera. ', NULL),
-(2, 'Philips Avent Cepillo para mamaderas ', 'Limpieza y cuidado fácil para productos de alimentación de bebés', 'El cabezal especialmente curvo del cepillo y la punta moldeada del mango ofrecen una limpieza a fondo porque llegan a los rincones de todas las mamaderas de cuello ancho, tetinas y productos de alimentación. ', NULL),
-(5, 'sdasda', 'asdad', 'asdad', NULL);
+(12, ' Philips Avent Chupete Ultra Air ', 'Un chupete ligero y respirable', 'Calme a su bebé con un chupete que deja respirar la piel. Philips Avent ultra air cuenta con orificios extragrandes que mantienen la piel seca. Su protector ligero está diseñado para brindar el máximo flujo de aire. Disponible en varios colores y diseños', 'gpekjs0dnjdd4nctmy1o'),
+(11, 'Philips Avent Mamadera Natural ', 'Fácil de combinar con la lactancia materna natural', 'Nuestra mamadera Natural con tetina ultrasuave se asemeja más al pecho. La amplia tetina con la forma del pecho, el diseño en espiral flexible y los cómodos pétalos permiten un ajuste natural y facilitan la combinación de la lactancia materna y la alimentación con mamadera', 'v8u7hwemvizzio52hu91');
 
 -- --------------------------------------------------------
 
@@ -59,15 +58,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(60) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`) VALUES
-(1, 'ignacio', 'd41d8cd98f00b204e9800998ecf8427e'),
-(2, 'lapedox', '81dc9bdb52d04dc20036dbd8313ed055');
+(3, 'ignacio', '81dc9bdb52d04dc20036dbd8313ed055'),
+(2, 'lapedox', '81dc9bdb52d04dc20036dbd8313ed055'),
+(4, 'ignacio', '81dc9bdb52d04dc20036dbd8313ed055');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
