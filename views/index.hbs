@@ -4,11 +4,11 @@
 <!--navegador-->
 
 
-<div class="navegador">
+<div class="navegador"  style="background-color: rgba(0, 0, 0, 0.2);">
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="MaquetadoParte1y2.html">BBBrown</a>
+            <a class="navbar-brand" href="#">BBBrown</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -81,17 +81,19 @@
     {{#each novedades}}
     <!--    Modal -->
 
-    <div class="modal fade" id="modal {{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal{{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBlackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title" id="exampleBackdropLabel">{{titulo}}</h1>
+                    <h1 class="modal-title" id="staticBlackdropLabel">{{titulo}}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <span aria-hidden="true">$times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </div>
                 <div class="modal-body">
                     <h2>{{subtitulo}}</h2>
                     <p>{{cuerpo}}</p>
+                     <img src="{{imagen}}" alt="{{titulo}}" />
+
                 </div>
             </div>
         </div>  
